@@ -9,10 +9,7 @@ Scope Functionality:
 
 
 
-
 US: Add parcel to archive
-
-
 
 US Summary:
 
@@ -21,12 +18,10 @@ I want to have a possibility to add a particular parcel to the section "Archive"
 So that I will keep and track all my previously delivered parcels from the one place. 
 
 
-
 Pre-conditions: 
 
 1. Regirested user should have at least one  parcel on dashboard
 2. User’s parcel should have “delivered” status
-
 
 
 
