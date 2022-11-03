@@ -2,21 +2,20 @@
 User-story about localization on site https://ttrackster.herokuapp.com/
 
 User story- 
-As user, I want to be able to switch between ENG and UKR languages, so that I will be able to see all information on site both as in Enlish so in Ukrainian languages
+As user, I want to be able to choose English or Ukrainian language, so that I will be able to see all information on comfortable language for me
 
-Scenario- Switch on Ukrainian language
+Scenario- Choose Ukrainian language
 
-Given: The user navigates to the localization button
+Given: The user clicks the localization button
 And: System propose two languages- UKR and Eng
 When: The user selects <Ukr> option
-And: Site switches on Ukrainian language
-Then: The user sees all information on site in UKR language
+Then: All information on site is in UKR language
+And: the localization button is <Ukr>
 
+Scenario- Choose English language
 
-Scenario- Switch on English language
-
-Given: The user navigates to the localization button
+Given: The user clicks the localization button
 And: System propose two languages- UKR and Eng
 When: The user selects <Eng> option
-And: Site switches on English language
-Then: The user sees all information on site in Eng language
+Then: All information on site is in Eng language
+And: the localization button is <Eng>
