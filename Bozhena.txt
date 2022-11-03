@@ -1,15 +1,15 @@
 User story: As a user, I want to be able to change my account information, so that I  will be able to update my email address and phone number.
 
-Scenario 	1Change the email address
+Scenario 1:Change the email address
 Given:		The user navigates to the settings page
 When: 		The user selects  <update email> option
-And: 		enters a password    
-Then:		The system sends the link via the previous email
+And: 		  enters a password    
+Then:		  The system sends the link via the previous email
 Given: 		The user receives the link via the  previous email
 When: 		The user navigates through the link received in the previous email
 Then: 		The system enables the user to enter a new email
 
-Scenario 2: 	Change the phone number
+Scenario 2: Change the phone number
 Given: 		The user navigates to the settings page
 When: 		The user selects <update phone number>
 Then: 		The system enables the user to enter a  new phone number.
