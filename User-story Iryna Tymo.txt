@@ -1,5 +1,4 @@
 User story: as a user, I want to be able to access my account when I forget my password. Password reset message should be sent to e-mail.
-
 Scenario: Forgot password
 Given: user opens a page of registration
 When:  the user selects the "Forgot password" options
