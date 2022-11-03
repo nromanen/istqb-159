@@ -1,0 +1,25 @@
+User story: As a user, I want to log in to my account if I already registered on the site, or be able to login using social networks.
+
+
+Scenario: log in using already existing account
+
+Given User opens the login page
+When the User inputs the registered email
+And Input the right password
+Then the Site redirects the user to the main page as logged in user
+
+Scenario: login with the wrong password
+
+Given User opens the login page
+When the User inputs the registered email
+And Input the wrong password
+Then Shows the message: "Wrong password or email"
+
+Scenario: log in using google account.
+
+Given User opens the login page
+When the User chooses "login with Google"
+Then Site redirects the user to "google accounts"
+When the User chooses the account
+And fills in the correct password
+Then the Site redirects the user to the main page as logged in user
