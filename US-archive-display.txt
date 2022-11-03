@@ -4,7 +4,7 @@ where each item of the list will contain ID number, name of the partner and date
 Scenario: Archive dashboard displaying
  Given: Main dashboard
  When: The user click archive button
- Then: The system redirects the user to archieve dashboard
+ Then: Opens the archieve dashboard
  And: The user sees the main information about each archive parcels
  When: The user click on any item of the list
- Then: The system will redirect the user to a section with the whole information about each parcel
+ Then: Opens a section with the whole information about each parcel
