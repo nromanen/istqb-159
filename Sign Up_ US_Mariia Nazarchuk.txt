@@ -1,0 +1,20 @@
+User Story: New user Signs Up on https://ttrackster.herokuapp.com
+
+Scenario 1: Correct Sign Up
+Given: The user navigates for the Sign Up page
+Given: Opened form to fill up Sign Up
+And: Enters a valid email, user's valid Password, confirm this Password
+And: The valid Password must consists min 8 symbols
+And: It must include Upper case, Lower case, numbers and special characters
+Then: The system sends the link to the entered email
+Given: The user receives the link via the email
+Then: The user navigates through the link received in the email
+Then: The system enables the user to access account 
+
+Scenario 2: Incorrect Sign Up
+Given: The user navigates for the Sign Up page
+Given: Opened form to fill up Sign Up
+And: Enters a valid email, user's valid Password, confirm this Password
+Given: User clicks on the  Sign Up button
+And: The system opens the message that the current email already used
+Then: The system gives option check or change current email
