@@ -1,12 +1,10 @@
 As a Customer, when I open archive folder in Tracker, I want to see a listbox with my archived parcels, 
-where each item of the list will contain main information about parcel like ID number, name of the partner 
-and date of adding. Then when I click on an item of the list it will open new folder where I will see the 
-whole information of my parcel.
+where each item of the list will contain ID number, name of the partner and date of adding. 
 
-Scenario: Archive display
- Given: Archive folder
- When: The user opens an archive folder
- Then: The user sees a listbox of archived parcels
- Given: The main information about each archives parcel
+Scenario: Archive dashboard displaying
+ Given: Main dashboard
+ When: The user click archive button
+ Then: The system redirects the user to archieve dashboard
+ And: The user sees the main information about each archive parcels
  When: The user click on any item of the list
- Then: The user will get the whole information about each parcel
+ Then: The system will redirect the user to a section with the whole information about each parcel
