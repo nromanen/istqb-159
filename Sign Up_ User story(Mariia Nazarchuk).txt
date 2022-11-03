@@ -1,0 +1,21 @@
+User Story: New user Signs Up on https://ttrackster.herokuapp.com
+
+Scenario 1: Correct Sign Up
+Given: The user navigates for the Sign Up page
+Given: Opened special form to fill up Sign Up
+And: Enters a valid email, user's fictional Password, confirmed this Password
+Then: The system sends the link to the entered email
+Given: The user receives the link via the email
+When: The user navigates through the link received in the email
+Then: The system enables the user to access for account 
+
+Scenario 2: Incorrect Sign Up
+Given: The user navigates for the Sign Up page
+Given: Opened special form to fill up Sign Up
+And: Enters a valid email, user's fictional Password, confirmed this Password
+Then: The system sends the link to the entered email
+Given: The user not received the link via the email
+Then: Check if email was correct
+And: Make changes and try again
+Given: The system doesn't send your confirmation link 
+And: The user tries to log in with Google or Facebook
