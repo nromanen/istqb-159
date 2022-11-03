@@ -1,0 +1,45 @@
+App: Ttrackster https://ttrackster.herokuapp.com/
+
+
+Scope Functionality: 
+
+1. Parcels list
+2. Add parcel to archive
+3. View archived parcels
+
+
+
+
+US: Add parcel to archive
+
+
+
+US Summary:
+
+AS a registered user 
+I want to have a possibility to add a particular parcel to the section "Archive" 
+So that I will keep and track all my previously delivered parcels from the one place. 
+
+
+
+Pre-conditions: 
+
+1. Regirested user should have at least one  parcel on dashboard
+2. User’s parcel should have “delivered” status
+
+
+
+
+Acceptance Criteria:
+
+1. GIVEN User on his dashboard with a list of his parcels 
+AND each parcels contains a short (3 dots) menu  
+WHEN user clicks on the menu 
+THEN menu is open and appears with an option "Archive"
+
+2. WHEN A user clicks on the "Archive" option 
+THEN particular parcel is disappeared from his dashboard 
+AND user receives a short notification with info "Parcel is added to Archive"   
+
+3. WHEN user moves to the section "Archive" 
+THEN he can see his particular parcel added to his list of archived parcels.
