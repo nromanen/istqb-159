@@ -1,0 +1,12 @@
+As a Customer, when I open archieve folder in Tracker, I want to see a listbox with my archieved parcels, 
+where each item of the list will contain main information about parcel like ID number, name of the partner 
+and date of adding. Then when I click on an item of the list it will open new folder where I will see the 
+whole information of my parcel.
+
+Scenario: Archieve display
+ Given: Archeive folder
+ When: The user opens an archieve folder
+ Then: The user sees a listbox of archieved parcels
+ Given: The main information about each archieves parcel
+ When: The user click on any item of the list
+ Then: The user will get the whole information about each parcel
