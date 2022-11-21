@@ -1,0 +1,46 @@
+User story: As a user, I want to be able to change my account information, so that I  will be able to update my email address and phone number.
+
+Scenario 1:     сhange the email address
+Given:		the user navigates to the settings page
+When: 		the user selects  <update email> option
+And: 		enters a password    
+Then:		the system sends the link via the previous email
+Given: 		the user receives the link via the  previous email
+When: 		the user navigates through the link received in the previous email
+Then: 		the system enables the user to enter a  new phone number.
+And:            the user enters a new email
+And:            a new mail appears on the settings page
+
+
+Scenario 2: 	change the phone number
+Given: 		the user navigates to the settings page
+When: 		the user selects <update phone number> option
+Then: 		the system enables the user to enter a  new phone number.
+And:            the user enters a new phone number
+And:            a new phone number appears on the settings page
+            
+
+Scenario 3:     unsuccess change the mail when user enters the mail already exists in the system
+Given:		the user navigates to the settings page
+When: 		the user selects  <update email> option
+And: 		enters a password 
+Then:		the system sends the link via the previous email
+Given: 		the user receives the link via the  previous email
+When: 		the user navigates through the link received in the previous email
+Then: 		the system enables the user to enter a new email
+Then:           the user enters a new mail that already exists in the system
+And:            the system blocks the ability to change the mail
+And:            the system shows message "this mail already exists"
+
+Scenario 4: 	unsuccess change the phone number when user enter the phone number already exists in the system 
+Given: 		the user navigates to the settings page
+When: 		the user selects <update phone number> option
+Then:           the user enters a new phone number that already exists in the system
+And:            the system blocks the ability to change the phone number 
+And:            the system shows message "this phone number already exists"    
+
+
+
+
+
+
