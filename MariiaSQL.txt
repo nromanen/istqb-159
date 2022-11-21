@@ -1,0 +1,46 @@
+4. Show the list of first, last names and ages of the employees whose age is greater than 55. The result should be sorted by last name. 
+
+select last_name, extract(year from age(birth_date)) as age from employees 
+where extract(year from age(birth_date)) >55;
+
+5. Calculate the count of employees from London.
+
+select count(*)  from employees where city='London';
+ 
+6. Calculate the greatest, the smallest and the average age among the employees from London. 
+
+select max(extract(year from age(birth_date))), avg(extract(year from age(birth_date))), min(extract(year from age(birth_date))) 
+from employees where city='London';
+
+7. Calculate the greatest, the smallest and the average age of the employees for each city. 
+
+select city, max(extract(year from age(birth_date))), avg(extract(year from age(birth_date))), min(extract(year from age(birth_date))) 
+from employees group by city;
+
+8. Show the list of cities in which the average age of employees is greater than 60 (the average age is also to be shown) 
+
+select city, extract(year from age(birth_date)) as age from employees 
+where (extract(year from age(birth_date))) >60;
+
+9. Show the first and last name(s) of the eldest employee(s).  
+
+select first_name || ' '|| last_name, max(extract(year from age(birth_date))) from employees 
+group by first_name, last_name;
+
+10. Show first, last names and ages of 3 eldest employees. 
+
+select first_name || ' '|| last_name, max(extract(year from age(birth_date))) from employees 
+group by first_name, last_name order by max(extract(year from age(birth_date)))desc limit 3;
+
+11. Show the list of all cities where the employees are from. 
+
+select distinct city from employees;
+
+12. Show first, last names and dates of birth of the employees who celebrate their birthdays this month. 
+
+select first_name, birth_date from employees where date_part('month', birth_date) = date_part('month', now());
+
+13. Show first and last names of the employees who used to serve orders shipped to Madrid.
+
+select distinct first_name || ' '||last_name as employee_name from employees join orders on employees.employee_id= orders.employee_id
+where ship_city='Madrid';
