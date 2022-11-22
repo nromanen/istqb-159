@@ -1,0 +1,10 @@
+SELECT ship_country, order_id, customer_id 
+FROM orders
+WHERE 
+order_id IN
+(SELECT order_id from order_details
+where quantity >1) 
+and 
+customer_id in
+(select customer_id from customers 
+ where country='France')
