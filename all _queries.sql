@@ -39,3 +39,17 @@ WHERE EXTRACT (YEAR FROM (REQUIRED_DATE)) = '1997'
 AND EXTRACT (YEAR FROM (SHIPPED_DATE)) = '1997'
 AND REQUIRED_DATE < SHIPPED_DATE
 GROUP BY EMPLOYEES.EMPLOYEE_ID
+
+Andriy 
+
+Select employees.first_name, employees.last_name, employees.country, SUM(order_details.quantity) AS total_quantity
+from orders
+left join employees on orders.employee_id = employees.employee_id
+left join order_details on orders.order_id = order_details.order_id
+GROUP BY employees.first_name, employees.last_name, employees.country
+
+SELECT employees.first_name, employees.last_name, orders.ship_country, SUM(order_details.quantity) AS total_quantity
+FROM orders
+LEFT join employees on orders.employee_id = employees.employee_id
+left join order_details on orders.order_id = order_details.order_id
+GROUP BY employees.first_name, employees.last_name, orders.ship_country
