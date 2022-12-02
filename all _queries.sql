@@ -53,3 +53,26 @@ FROM orders
 LEFT join employees on orders.employee_id = employees.employee_id
 left join order_details on orders.order_id = order_details.order_id
 GROUP BY employees.first_name, employees.last_name, orders.ship_country
+
+Mariia - № 26
+Show the total ordering sums calculated for each customer’s country for 
+domestic and non-domestic products separately (e.g.: “France – French 
+products ordered – Non-french products ordered” and so on for each country). 
+
+For domestic products:
+select customers.country, sum(order_details.unit_price*quantity)
+from customers join orders on customers.customer_id=orders.customer_id
+join order_details on orders.order_id=order_details.order_id
+join products on order_details.product_id=products.product_id
+join suppliers on products.supplier_id=suppliers.supplier_id
+where customers.country= suppliers.country
+group by customers.country
+
+For non- domestic products:
+select customers.country, sum(order_details.unit_price*quantity)
+from customers join orders on customers.customer_id=orders.customer_id
+join order_details on orders.order_id=order_details.order_id
+join products on order_details.product_id=products.product_id
+join suppliers on products.supplier_id=suppliers.supplier_id
+where customers.country<> suppliers.country
+group by customers.country
