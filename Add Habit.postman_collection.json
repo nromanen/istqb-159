@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "e081317e-e700-490d-8345-3056871118c4",
+		"name": "Add Habit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23639919"
+	},
+	"item": [
+		{
+			"name": "https://greencity.signIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.globals.get(\"token\",pm.response.json().accessToken);",
+							"pm.globals.get(\"refreshToken\", pm.response.json().refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"verbitskakatya@gmail.com\",\"password\":\"Katya252243!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity-user.testgreencity.ga/user/568/profile/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/568/profile/",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"568",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity/profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});",
+							"pm.globals.get(\"token\",pm.response.json().accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"lviv\",\"name\":\"Kateryna Verbitska\",\"userCredo\":null,\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity/habit/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Status\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"INPROGRESS\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/habit/assign/1",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"habit",
+						"assign",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity/habit/1 old",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Status\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"INPROGRESS\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/habit/assign/1",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"habit",
+						"assign",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity.testgreencity.ga/habit/1?lang=ua",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/habit/1?lang=ua",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"habit",
+						"1"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "ua"
+						}
+					]
+				},
+				"description": "Add Habit"
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity/habit/delete/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/habit/assign/delete/1",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"habit",
+						"assign",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://greencity/habit/deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"There is no habit assign for current user and such habit with id: \");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/habit/assign/delete/1",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"habit",
+						"assign",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
