@@ -155,7 +155,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://greencity-user.testgreencity.ga/user/{{Mariia}}/acceptFriend/{{Iryna}}",
+					"raw": "https://greencity-user.testgreencity.ga/user/569/userFriend/{{Iryna}}",
 					"protocol": "https",
 					"host": [
 						"greencity-user",
@@ -164,8 +164,8 @@
 					],
 					"path": [
 						"user",
-						"{{Mariia}}",
-						"acceptFriend",
+						"569",
+						"userFriend",
 						"{{Iryna}}"
 					]
 				}
@@ -193,7 +193,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{token}}",
+							"value": "{{token_Iryna}}",
 							"type": "string"
 						}
 					]
@@ -201,7 +201,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://greencity-user.testgreencity.ga/user/633/acceptFriend/{{Mariia}}",
+					"raw": "https://greencity-user.testgreencity.ga/user/578/userFriend/{{Mariia}}",
 					"protocol": "https",
 					"host": [
 						"greencity-user",
@@ -210,8 +210,8 @@
 					],
 					"path": [
 						"user",
-						"633",
-						"acceptFriend",
+						"578",
+						"userFriend",
 						"{{Mariia}}"
 					]
 				}
