@@ -1,0 +1,445 @@
+{
+	"info": {
+		"_postman_id": "226408c7-19bb-4b38-bf9a-c0aeaf0deaa3",
+		"name": "Create_an_event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23672164"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.globals.set('token',pm.response.json().accessToken)",
+							"",
+							"pm.globals.set('userId',pm.response.json().userId)",
+							"//console.log(pm.response.json().name,pm.response.json().id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"kgoncharova14@gmail.com\",\"password\":\"Qwerty.2022\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfileInformation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": " {{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/{{userId}}/profile/",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"{{userId}}",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventCreation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.globals.set('id',pm.response.json().id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "addEventDtoRequest",
+							"value": "{\"title\":\"MeetingTest\",\"description\":\"<p><span style=\\\"background-color: rgb(255, 255, 255); color: rgb(21, 29, 33);\\\">A meeting summary is a less formal version of meeting minutes. It’s often an email that is sent as a recap or follow-up of the meeting which gives a general overview of the discussion that was had and serves as a reminder of the tasks that have been assigned to different members of the team.</span></p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-28T02:00:00+02:00\",\"finishDate\":\"2022-12-28T07:00:00+02:00\",\"coordinates\":{\"latitude\":50.4475854,\"longitude\":30.5220257}}],\"tags\":[\"Social\"]}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/create",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventInformation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql ((\"id\",pm.response.json().id));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/event/{{id}}",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"event",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventCreationNegative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonDataArray = pm.response.json();",
+							"    var expectedMessages = [\"size must be between 1 and 70\", \"must not be empty\"];",
+							"    ",
+							"    expectedMessages.forEach(expected => {",
+							"        var actual = jsonDataArray.find(i => i.message == expected)?.message;",
+							"",
+							"        pm.expect(expected).to.eq(actual)",
+							"    })",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "addEventDtoRequest",
+							"value": "{\"title\":\"\",\"description\":\"<p><span style=\\\"background-color: rgb(255, 255, 255); color: rgb(21, 29, 33);\\\">A meeting summary is a less formal version of meeting minutes. It’s often an email that is sent as a recap or follow-up of the meeting which gives a general overview of the discussion that was had and serves as a reminder of the tasks that have been assigned to different members of the team.</span></p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-28T02:00:00+02:00\",\"finishDate\":\"2022-12-28T07:00:00+02:00\",\"coordinates\":{\"latitude\":50.4475854,\"longitude\":30.5220257}}],\"tags\":[\"Social\"]}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/create",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventUpdate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.globals.set('title',pm.response.json().title)",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.title).to.eql (('title',pm.response.json().title));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "eventDto",
+							"value": "{\"title\":\"Meet\",\"description\":\"<p><span style=\\\"background-color: rgb(255, 255, 255); color: rgb(21, 29, 33);\\\">A meeting summary is a less formal version of meeting minutes. It’s often an email that is sent as a recap or follow-up of the meeting which gives a general overview of the discussion that was had and serves as a reminder of the tasks that have been assigned to different members of the team.</span></p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-28T03:00:00+02:00\",\"finishDate\":\"2022-12-28T07:00:00+02:00\",\"coordinates\":{\"latitude\":50.4475854,\"longitude\":30.5220257}}],\"tags\":[\"Social\"],\"imagesToDelete\":[],\"additionalImages\":null,\"id\":{{id}},\"titleImage\":\"https://csb10032000a548f571.blob.core.windows.net/allfiles/8f09887c-2fbf-4ee1-95fc-6763a1873b93EventDefaultImage.png\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/update",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventUpdateWithoutPermission",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"Current user has no permission for this action\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "eventDto",
+							"value": "{\"title\":\"MeetingTest\",\"description\":\"<p><span style=\\\"background-color: rgb(255, 255, 255); color: rgb(21, 29, 33);\\\">A meeting summary is a less formal version of meeting minutes. It’s often an email that is sent as a recap or follow-up of the meeting which gives a general overview of the discussion that was had and serves as a reminder of the tasks that have been assigned to different members of the team.</span></p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-28T03:00:00+02:00\",\"finishDate\":\"2022-12-28T07:00:00+02:00\",\"coordinates\":{\"latitude\":50.4475854,\"longitude\":30.5220257}}],\"tags\":[\"Social\"],\"imagesToDelete\":[],\"additionalImages\":null,\"id\":430,\"titleImage\":\"https://csb10032000a548f571.blob.core.windows.net/allfiles/8f09887c-2fbf-4ee1-95fc-6763a1873b93EventDefaultImage.png\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/update",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventDelete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/delete/{{id}}",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"delete",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
