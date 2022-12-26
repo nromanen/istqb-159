@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "ae02c68c-0a9f-44b0-8302-323b9af2404b",
+		"name": "HomeWork_Create_News",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24808551"
+	},
+	"item": [
+		{
+			"name": "sign_in_greencity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"irunatymo@gmail.com\",\"password\":\"123456testA_\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_news",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.globals.set('id_news',pm.response.json().id)\r",
+							"\r",
+							"\r",
+							"pm.test(\"title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Test \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "addEcoNewsDtoRequest",
+							"value": "{\"tags\":[\"Initiatives\"],\"text\":\"<p>Create a news</p>\",\"title\":\"Test \",\"source\":\"\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/econews",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"econews"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile_statistics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/578/profileStatistics/",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"578",
+						"profileStatistics",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_my_news",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/econews/247?lang=en",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"econews",
+						"247"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_news",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "updateEcoNewsDto",
+							"value": "{\"id\":\"264\",\"tags\":[\"Initiatives\"],\"content\":\"<p>Create a news</p>\",\"title\":\"Test \\\"Тестові новини\\\"\",\"source\":null,\"text\":\"<p>Create a news</p>\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/econews/update",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"econews",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "578"
+		},
+		{
+			"key": "id",
+			"value": "215"
+		},
+		{
+			"key": "news_id",
+			"value": "254"
+		}
+	]
+}
