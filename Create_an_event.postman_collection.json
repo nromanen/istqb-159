@@ -61,7 +61,9 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							""
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -133,7 +135,7 @@
 					"formdata": [
 						{
 							"key": "addEventDtoRequest",
-							"value": "{\"title\":\"MeetingTest\",\"description\":\"<p><span style=\\\"background-color: rgb(255, 255, 255); color: rgb(21, 29, 33);\\\">A meeting summary is a less formal version of meeting minutes. It’s often an email that is sent as a recap or follow-up of the meeting which gives a general overview of the discussion that was had and serves as a reminder of the tasks that have been assigned to different members of the team.</span></p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-28T02:00:00+02:00\",\"finishDate\":\"2022-12-28T07:00:00+02:00\",\"coordinates\":{\"latitude\":50.4475854,\"longitude\":30.5220257}}],\"tags\":[\"Social\"]}",
+							"value": "{\"title\":\"test\",\"description\":\"<p>jfrifuhwkjfnckshbkjcnfsoifjosrihfweufhlwgjfofhiwgufhoweuf</p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-30T03:00:00+02:00\",\"finishDate\":\"2022-12-30T08:00:00+02:00\",\"coordinates\":{\"latitude\":49.8413276,\"longitude\":24.0315923}}],\"tags\":[\"Environmental\"]}",
 							"type": "text"
 						}
 					]
