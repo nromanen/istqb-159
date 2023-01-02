@@ -1,0 +1,6 @@
+[{"name": "", "message": ["must not be blank", "{greenCity.validation.invalid.username}", "length must be between 6 and 30"]},
+{"name ": " ", "message":["{greenCity.validation.invalid.username}", "length must be between 6 and 30", "must not be blank"]},
+{"name ": "A", "message": ["{greenCity.validation.invalid.username}", "length must be between 6 and 30"]},
+{"name ": "aa", "message": ["length must be between 6 and 30"]},
+{"name ": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "message": ["length must be between 6 and 30"]},
+{"name ": "!!!!!!!!", "message": ["{greenCity.validation.invalid.username}"]}]

@@ -1,0 +1,4 @@
+[{"email": "andris9088@gmail.com", "message": ["User with this email is already registered"]},
+{"email": "andris9088@", "message":["{greenCity.validation.invalid.email}"]},
+{"email": "", "message": ["must not be blank", "{greenCity.validation.invalid.email}"]},
+{"email": "", "message": ["{greenCity.validation.invalid.email}", "must not be blank"]}]

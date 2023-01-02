@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "5e5bea31-d550-4a10-97ed-52776acdfd16",
+		"name": "sign up (data file)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24778399"
+	},
+	"item": [
+		{
+			"name": "Password",
+			"item": [
+				{
+					"name": "entering password with data file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Message check\", function() {",
+									"    const response = pm.response.json().map(element => element.message);",
+									"    const expected = data[\"message\"];",
+									"    ",
+									"    for(let i = 0; i++; i<response.length) {",
+									"        pm.expect(response[i]).to.eql(expected[i])",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"makovandriy@gmail.com\",\"name\":\"andris\",\"password\": \"{{password}}\",\"isUbs\":false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signUp",
+							"protocol": "https",
+							"host": [
+								"greencity-user",
+								"testgreencity",
+								"ga"
+							],
+							"path": [
+								"ownSecurity",
+								"signUp"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "entering email with data file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"",
+									"pm.test(\"message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"User with this email is already registered\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"andris9088@gmail.com\",\"name\":\"andris9088\",\"password\":\"1397Admin!\",\"isUbs\":false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signUp?lang=en",
+							"protocol": "https",
+							"host": [
+								"greencity-user",
+								"testgreencity",
+								"ga"
+							],
+							"path": [
+								"ownSecurity",
+								"signUp"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Username",
+			"item": [
+				{
+					"name": "entering username with data file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"must not be blank\");",
+									"});",
+									"",
+									"pm.test(\"message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"{greenCity.validation.invalid.username}\");",
+									"});",
+									"",
+									"pm.test(\"message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"length must be between 6 and 30\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"andris9088@gmail.com\",\"name\":\"\",\"password\":\"12345678Aa!\",\"isUbs\":false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signUp?lang=en",
+							"protocol": "https",
+							"host": [
+								"greencity-user",
+								"testgreencity",
+								"ga"
+							],
+							"path": [
+								"ownSecurity",
+								"signUp"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
