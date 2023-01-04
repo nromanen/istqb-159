@@ -111,7 +111,8 @@
 							"    pm.response.to.have.status(201);",
 							"});",
 							"",
-							"pm.globals.set('id',pm.response.json().id)"
+							"",
+							" pm.globals.set('id',pm.response.json().id)"
 						],
 						"type": "text/javascript"
 					}
@@ -135,7 +136,66 @@
 					"formdata": [
 						{
 							"key": "addEventDtoRequest",
-							"value": "{\"title\":\"test\",\"description\":\"<p>jfrifuhwkjfnckshbkjcnfsoifjosrihfweufhlwgjfofhiwgufhoweuf</p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2022-12-30T03:00:00+02:00\",\"finishDate\":\"2022-12-30T08:00:00+02:00\",\"coordinates\":{\"latitude\":49.8413276,\"longitude\":24.0315923}}],\"tags\":[\"Environmental\"]}",
+							"value": "{\"title\":\"test\",\"description\":\"<p>jfrifuhwkjfnckshbkjcnfsoifjosrihfweufhlwgjfofhiwgufhoweuf</p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2023-01-30T03:00:00+02:00\",\"finishDate\":\"2023-01-30T08:00:00+02:00\",\"coordinates\":{\"latitude\":49.8413276,\"longitude\":24.0315923}}],\"tags\":[\"Environmental\"]}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/create",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EventCreation with unvalid date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"HV000028: Unexpected exception during isValid call.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "addEventDtoRequest",
+							"value": "{\"title\":\"test\",\"description\":\"<p>jfrifuhwkjfnckshbkjcnfsoifjosrihfweufhlwgjfofhiwgufhoweuf</p>\",\"open\":true,\"datesLocations\":[{\"startDate\":\"2023-01-30T03:00:00+02:00\",\"finishDate\":\"2022-01-30T08:00:00+02:00\",\"coordinates\":{\"latitude\":49.8413276,\"longitude\":24.0315923}}],\"tags\":[\"Environmental\"]}",
 							"type": "text"
 						}
 					]
