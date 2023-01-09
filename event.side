@@ -1,0 +1,187 @@
+{
+  "id": "793b61e5-9cb1-455f-90dd-0a74a9481347",
+  "version": "2.0",
+  "name": "er",
+  "url": "https://www.testgreencity.ga",
+  "tests": [{
+    "id": "490e28c9-4a21-4e8a-84bf-8c8edc12f0c8",
+    "name": "ev",
+    "commands": [{
+      "id": "c42697c8-b54e-43a8-b443-7cc31ce0bb63",
+      "comment": "",
+      "command": "open",
+      "target": "/GreenCityClient/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ffb1b86-8d8c-4766-b066-c5d558e6a7fd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d38ac4a-05e9-43be-9fe6-9ae52d65c88c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4fa39df-9303-4093-8e88-51d29aa9554c",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "336e18f4-9d50-41b3-9b89-14121060dfbb",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "bozhenavol@ukr.net"
+    }, {
+      "id": "5a19862a-4d50-4301-b38c-366f0aa37ca3",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c99886bd-bd75-43ba-9d2c-d7978901fb96",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Bozhena21#"
+    }, {
+      "id": "c3b105c0-8689-48da-b6c6-03f8c33c01f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greenStyle",
+      "targets": [
+        ["css=.greenStyle", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "576ecce1-c8bb-4378-b429-65fc1c10db00",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Events",
+      "targets": [
+        ["linkText=Events", "linkText"],
+        ["css=ul > .ng-star-inserted:nth-child(2) > .ng-star-inserted", "css:finder"],
+        ["xpath=//a[contains(text(),'Events')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#/events')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b73cf16-af55-4a24-a3bb-b0df61d9b4bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mat-card:nth-child(2) .secondary-global-button",
+      "targets": [
+        ["css=.mat-card:nth-child(2) .secondary-global-button", "css:finder"],
+        ["xpath=//mat-card[2]/app-events-list-item/div/div[2]/div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "614e3369-7864-493a-b2e5-8e778152c6d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.event-main",
+      "targets": [
+        ["css=.event-main", "css:finder"],
+        ["xpath=//app-event-details/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2aff6e40-7b38-4d30-a567-3f78a287dbe6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h3",
+      "targets": [
+        ["css=h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Description')]", "xpath:innerText"]
+      ],
+      "value": "Description"
+    }, {
+      "id": "8aef362d-df31-4970-a637-bb09aec9f5d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header_user-name > span",
+      "targets": [
+        ["css=.header_user-name > span", "css:finder"],
+        ["xpath=//ul[@id='header_user-wrp']/li/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'bozhena')]", "xpath:innerText"]
+      ],
+      "value": "bozhena"
+    }, {
+      "id": "a1a91d26-0055-492b-8480-fd5f7af7f344",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign out",
+      "targets": [
+        ["linkText=Sign out", "linkText"],
+        ["css=.drop-down-item:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Sign out')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='header_user-wrp']/li[3]/a", "xpath:idRelative"],
+        ["xpath=//ul[2]/li[3]/a", "xpath:position"]
+      ],
+      "value": "sign out"
+    }]
+  }],
+  "suites": [{
+    "id": "43a15d8a-1848-4aac-bf68-674072f59e24",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["490e28c9-4a21-4e8a-84bf-8c8edc12f0c8"]
+  }],
+  "urls": ["https://www.testgreencity.ga/"],
+  "plugins": []
+}
