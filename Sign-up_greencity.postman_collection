@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "a8251992-b84b-4206-b1f8-c9a3578665ef",
+		"name": "Sign-up greencity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24929510"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "account created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\" : \"AWf@sdsffff.com\", \"name\" : \"sadgsdfgdasdg\", \"password\" : \"ssdsddfds123!qQ\", \"isUbs\": false }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signUp",
+							"protocol": "https",
+							"host": [
+								"greencity-user",
+								"testgreencity",
+								"ga"
+							],
+							"path": [
+								"ownSecurity",
+								"signUp"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jan 2023 13:13:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, PUT, POST, DELETE, PATCH, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "1728000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 696,\n    \"username\": \"sadgsdfgdasdg\",\n    \"email\": \"AWf@sdsffff.com\",\n    \"ownRegistrations\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign in",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
