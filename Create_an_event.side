@@ -1,0 +1,572 @@
+{
+  "id": "e87974d6-2c88-4cd1-b07c-44c000a0a78e",
+  "version": "2.0",
+  "name": "Creat_an_event",
+  "url": "https://www.testgreencity.ga/GreenCityClient/#/",
+  "tests": [{
+    "id": "214f27d6-0b23-4cc5-84b8-66c3c810e13f",
+    "name": "Test_Delete1",
+    "commands": [{
+      "id": "d87b38d1-8e46-471f-8a79-bcbec4be4faf",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.testgreencity.ga/GreenCityClient/#/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fc06efe-2b4c-48b1-bd13-7cfd0db8bd49",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2540a8d7-e22f-4253-9703-fb4fc1895680",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d3b841a-f74e-4eec-9875-14f6f5284f4f",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "685aba71-74bd-4c4b-b0bc-b70575bda970",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "kgoncharova14@gmail.com"
+    }, {
+      "id": "3d6d929e-d0ed-43a4-bf77-f2e13ad9c2f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b51c8c9-e071-4a66-a9ed-d7b7b9595374",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty.2022"
+    }, {
+      "id": "a01fe075-c3e2-4aa4-a7c5-e032e905e0cc",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3a930658-8bb3-4930-ad57-1c296c9de001",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-tab-label-0-2 > .mat-tab-label-content",
+      "targets": [
+        ["css=#mat-tab-label-0-2 > .mat-tab-label-content", "css:finder"],
+        ["xpath=//div[@id='mat-tab-label-0-2']/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbd5cfa2-8266-4be0-bf53-88dcd7aa93e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.secondary-global-button:nth-child(1)",
+      "targets": [
+        ["css=.secondary-global-button:nth-child(1)", "css:finder"],
+        ["xpath=//mat-tab-body[@id='mat-tab-content-0-2']/div/div/ul/li/app-events-list-item/div/div[2]/div[5]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'More')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb1d1359-b4a5-4448-8deb-566ac20e7748",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ede3809-c020-4c74-bd91-f713d9dc92ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.delete-button > span",
+      "targets": [
+        ["css=.delete-button > span", "css:finder"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcc52226-118f-4503-9171-5a0afc801a6f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary-global-button",
+      "targets": [
+        ["css=.primary-global-button", "css:finder"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-1']/app-dialog-pop-up/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'yes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be7553ac-6cae-4884-83c6-4431bf4fea38",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7cdea7bd-1855-475a-9e52-287c2eac1456",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header_user-name > .header_arrow",
+      "targets": [
+        ["css=.header_user-name > .header_arrow", "css:finder"],
+        ["xpath=//img[@alt='arrow down icon']", "xpath:img"],
+        ["xpath=//ul[@id='header_user-wrp']/li/a/img", "xpath:idRelative"],
+        ["xpath=//li/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45ad70fa-35d8-4da6-97b2-cd7d5324c8ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign out",
+      "targets": [
+        ["linkText=Sign out", "linkText"],
+        ["css=.drop-down-item:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Sign out')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='header_user-wrp']/li[3]/a", "xpath:idRelative"],
+        ["xpath=//ul[2]/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d1aae04-0c62-4037-a894-14f180a2f684",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ba0d6f0b-765d-4fc1-8e81-de626084cc2d",
+    "name": "Test1",
+    "commands": [{
+      "id": "ab1f8aa5-0e3f-4e0d-aecc-b57b3483afda",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.testgreencity.ga/GreenCityClient/#/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53982b14-8168-438b-a8c4-843da9fde3df",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5a5410f-2cf7-4598-97c4-7931144467f5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5e9f28e-bf7a-453c-baf0-16af7d6df8e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23f47713-7ec9-47ef-bf58-acfdf4190ecc",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "kgoncharova14@gmail.com"
+    }, {
+      "id": "eaf9feea-535e-4c24-97fe-b002b92905ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1894403-9a5d-4f59-8eee-179cc961b0a4",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty.2022"
+    }, {
+      "id": "fe9974ea-f713-422d-a0b3-aa71b1659078",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "20341ec9-c1ca-4c00-9bd2-f41bbd8c9ce4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Events",
+      "targets": [
+        ["linkText=Events", "linkText"],
+        ["css=ul > .ng-star-inserted:nth-child(2) > .ng-star-inserted", "css:finder"],
+        ["xpath=//a[contains(text(),'Events')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#/events')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6bcf77c-079a-4ae5-9f96-46a0640daaff",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61e1c595-9931-4972-b645-fded8f33c5f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.create-button-text",
+      "targets": [
+        ["css=.create-button-text", "css:finder"],
+        ["xpath=//a/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb7ed4a2-b0d4-47a1-8dee-140d84f890c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-tns-c246-4 > .mat-form-field-infix",
+      "targets": [
+        ["css=.ng-tns-c246-4 > .mat-form-field-infix", "css:finder"],
+        ["xpath=//mat-form-field/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7c0407c-7d94-4514-b8c1-1ae87b869107",
+      "comment": "",
+      "command": "type",
+      "target": "id=mat-input-0",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Test1"
+    }, {
+      "id": "6ca24c43-638e-4042-bc2f-43505f621374",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mat-select-arrow-wrapper",
+      "targets": [
+        ["css=.mat-select-arrow-wrapper", "css:finder"],
+        ["xpath=//mat-select[@id='mat-select-0']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//mat-select/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25a2fe53-132d-42e0-9aee-0df0d35f9caf",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-option-0 > .mat-option-text",
+      "targets": [
+        ["css=#mat-option-0 > .mat-option-text", "css:finder"],
+        ["xpath=//mat-option[@id='mat-option-0']/span", "xpath:idRelative"],
+        ["xpath=//mat-option/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01475537-7404-4979-94df-1517a44a527f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mat-datepicker-toggle-default-icon",
+      "targets": [
+        ["css=.mat-datepicker-toggle-default-icon", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ac53b7e-3f1f-42dd-9a9f-4e769b0d79eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mat-datepicker-toggle-default-icon",
+      "targets": [
+        ["css=.mat-datepicker-toggle-default-icon", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ee9d65c-d1f0-4018-8651-b3d02b0c6741",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.mat-datepicker-toggle-default-icon",
+      "targets": [
+        ["css=.mat-datepicker-toggle-default-icon", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "928d224c-778b-42f6-8521-c55a98e7d436",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-star-inserted:nth-child(3) > .mat-calendar-body-cell:nth-child(7) > .mat-calendar-body-cell-content",
+      "targets": [
+        ["css=.ng-star-inserted:nth-child(3) > .mat-calendar-body-cell:nth-child(7) > .mat-calendar-body-cell-content", "css:finder"],
+        ["xpath=//mat-calendar[@id='mat-datepicker-0']/div/mat-month-view/table/tbody/tr[3]/td[7]/div", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[7]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf5801f3-b32e-4ba0-84a3-89379f7f0bee",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-checkbox-1 .mat-checkbox-inner-container",
+      "targets": [
+        ["css=#mat-checkbox-1 .mat-checkbox-inner-container", "css:finder"],
+        ["xpath=//mat-checkbox[@id='mat-checkbox-1']/label/div", "xpath:idRelative"],
+        ["xpath=//label/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6833fb8a-53d8-4968-919c-7e98f75cdfcd",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-checkbox-3 .mat-checkbox-inner-container",
+      "targets": [
+        ["css=#mat-checkbox-3 .mat-checkbox-inner-container", "css:finder"],
+        ["xpath=//mat-checkbox[@id='mat-checkbox-3']/label/div", "xpath:idRelative"],
+        ["xpath=//mat-checkbox[2]/label/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32a68c43-bbe5-4ef1-93e8-831925ef5858",
+      "comment": "",
+      "command": "click",
+      "target": "id=mat-input-3",
+      "targets": [
+        ["id=mat-input-3", "id"],
+        ["css=#mat-input-3", "css:finder"],
+        ["xpath=//input[@id='mat-input-3']", "xpath:attributes"],
+        ["xpath=//div[3]/mat-form-field/div/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5911daa-09bf-4e5d-b08d-cf820c6b2ecd",
+      "comment": "",
+      "command": "type",
+      "target": "id=mat-input-3",
+      "targets": [
+        ["id=mat-input-3", "id"],
+        ["css=#mat-input-3", "css:finder"],
+        ["xpath=//input[@id='mat-input-3']", "xpath:attributes"],
+        ["xpath=//div[3]/mat-form-field/div/div/div[3]/input", "xpath:position"]
+      ],
+      "value": "http://greencity"
+    }, {
+      "id": "0376c6e6-0314-420a-ba3f-6232efbac9b4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-container",
+      "targets": [
+        ["css=.ql-container", "css:finder"],
+        ["xpath=//quill-editor/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ef83264-24da-428b-9df0-af79619834af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-container",
+      "targets": [
+        ["css=.ql-container", "css:finder"],
+        ["xpath=//quill-editor/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad477a5e-8d87-4acd-baed-48673f33604f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-editor > p",
+      "targets": [
+        ["css=.ql-editor > p", "css:finder"],
+        ["xpath=//div[2]/div/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7b315c0-978b-4417-a9a6-3f2a83f43f91",
+      "comment": "",
+      "command": "editContent",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": "<p>te tefgh yghjfb hgyjkbnh hgyhnhjhf.</p>"
+    }, {
+      "id": "055c3410-cec8-436f-bcca-cacc62b334b0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-star-inserted:nth-child(1) > .custom-chip > .text",
+      "targets": [
+        ["css=.ng-star-inserted:nth-child(1) > .custom-chip > .text", "css:finder"],
+        ["xpath=//div/ul/li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Environmental')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcefa9a3-7bbb-4b3f-a6e2-5123b50d0911",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary-global-button > .mat-button-wrapper",
+      "targets": [
+        ["css=.primary-global-button > .mat-button-wrapper", "css:finder"],
+        ["xpath=//button[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Publish')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fab659a-4255-4f95-b9b4-d155decb0879",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ef4f6a6-b21b-45c8-9a10-781aed73925f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header_user-name > .header_arrow",
+      "targets": [
+        ["css=.header_user-name > .header_arrow", "css:finder"],
+        ["xpath=//img[@alt='arrow down icon']", "xpath:img"],
+        ["xpath=//ul[@id='header_user-wrp']/li/a/img", "xpath:idRelative"],
+        ["xpath=//li/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e6b8ab9-de42-4500-a84a-e2b91dbd2e61",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign out",
+      "targets": [
+        ["linkText=Sign out", "linkText"],
+        ["css=.drop-down-item:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Sign out')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='header_user-wrp']/li[3]/a", "xpath:idRelative"],
+        ["xpath=//ul[2]/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "938277c0-94ac-4655-a6f7-d9d179f2c6cd",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fc3de519-1a09-4cf6-9869-5942adde2560",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.testgreencity.ga/GreenCityClient/#/"],
+  "plugins": []
+}
