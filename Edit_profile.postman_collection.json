@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "831d51e5-85e3-4d56-938e-af5f08c59e46",
+		"name": "Edit profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24929510"
+	},
+	"item": [
+		{
+			"name": "Log in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.globals.set('refresh_token', pm.response.json().refreshToken)\r",
+							"\r",
+							"pm.globals.set('token', pm.response.json().accessToken)\r",
+							"\r",
+							"pm.globals.set('userID', pm.response.json().userId)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"thedarkestdark0ever@gmail.com\",\r\n    \"password\": \"asdasdA1!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"response is 'User successfully updated.'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User successfully updated.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"12\",\r\n    \"name\": \"qqqq\",\r\n    \"userCredo\": \"qwe\",\r\n    \"showLocation\": true,\r\n    \"showEcoPlace\": false,\r\n    \"showShoppingList\": false,\r\n    \"socialNetworks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile picture",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"headers\": {\r\n        \"normalizedNames\": {},\r\n        \"lazyUpdate\": null,\r\n        \"lazyInit\": null,\r\n        \"headers\": {}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/deleteProfilePicture",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"deleteProfilePicture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No profile picture check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"No profile picture\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.profilePicturePath).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/619/profile/",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"619",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
