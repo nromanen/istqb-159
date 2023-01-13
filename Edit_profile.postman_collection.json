@@ -112,6 +112,242 @@
 			"response": []
 		},
 		{
+			"name": "3 characters username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"let ar=pm.response.json().map(e=>e.message)\r",
+							"pm.test(\"error message\", function(){\r",
+							"pm.expect(ar).contains(\"name must contain only \\\"ЁёІіЇїҐґЄєА-Яа-яA-Za-z-' .\\\"\")\r",
+							"\r",
+							"})\r",
+							"pm.test(\"error messages\", function(){\r",
+							"pm.expect(ar).contains(\"name must have no less than 4 and no more than 30 symbols\")\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"12\",\r\n    \"name\": \"qqq\",\r\n    \"userCredo\": \"qwe\",\r\n    \"showLocation\": true,\r\n    \"showEcoPlace\": false,\r\n    \"showShoppingList\": false,\r\n    \"socialNetworks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 characters username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"response is 'User successfully updated.'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User successfully updated.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"12\",\r\n    \"name\": \"qwqq\",\r\n    \"userCredo\": \"qwe\",\r\n    \"showLocation\": true,\r\n    \"showEcoPlace\": false,\r\n    \"showShoppingList\": false,\r\n    \"socialNetworks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30 characters username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"response is 'User successfully updated.'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User successfully updated.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"12\",\r\n    \"name\": \"qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\",\r\n    \"userCredo\": \"qwe\",\r\n    \"showLocation\": true,\r\n    \"showEcoPlace\": false,\r\n    \"showShoppingList\": false,\r\n    \"socialNetworks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31 characters username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"let ar=pm.response.json().map(e=>e.message)\r",
+							"pm.test(\"error message\", function(){\r",
+							"pm.expect(ar).contains(\"name must contain only \\\"ЁёІіЇїҐґЄєА-Яа-яA-Za-z-' .\\\"\")\r",
+							"\r",
+							"})\r",
+							"pm.test(\"error messages\", function(){\r",
+							"pm.expect(ar).contains(\"name must have no less than 4 and no more than 30 symbols\")\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"12\",\r\n    \"name\": \"qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqQ\",\r\n    \"userCredo\": \"qwe\",\r\n    \"showLocation\": true,\r\n    \"showEcoPlace\": false,\r\n    \"showShoppingList\": false,\r\n    \"socialNetworks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.testgreencity.ga/user/profile",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "delete profile picture",
 			"event": [
 				{
